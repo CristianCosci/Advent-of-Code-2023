@@ -5,6 +5,7 @@ with open('input.txt') as f:
     game_sum = 0
     for line in lines:
         possible_configuration = True
+        # Each comment explain the series of splitting
         splitted_line = line.strip().split(': ') #['Game 1', '18 red, 8 green, 7 blue; 15 red, 4 blue, 1 green']
         game_num = int(splitted_line[0][5:])
         extraction_list = splitted_line[1].split('; ') #['18 red, 8 green, 7 blue', '15 red, 4 blue, 1 green']
@@ -14,6 +15,7 @@ with open('input.txt') as f:
                 num, color = draw.split(' ')
                 num = int(num)
 
+                # if the draws is greater than the rule invalidate the game
                 if cubes_dict_rule[color] < num:
                     possible_configuration = False
                     break

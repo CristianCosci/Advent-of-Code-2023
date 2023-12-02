@@ -16,6 +16,7 @@ with open('input.txt') as f:
                 num, color = draw.split(' ')
                 num = int(num)
 
+                # get the minimum draw for each color
                 if cubes_dict[color] < num:
                     cubes_dict[color] = num
     
